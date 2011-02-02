@@ -1,0 +1,18 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    camping (2.1)
+      rack (>= 1.0)
+    haml (3.0.25)
+    nokogiri (1.4.4)
+    rack (1.2.1)
+    tilt (1.2.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  camping (>= 2.0)
+  haml
+  nokogiri
+  tilt
