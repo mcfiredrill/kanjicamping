@@ -1,0 +1,2 @@
+require 'kanjiapp'
+run Kanji
