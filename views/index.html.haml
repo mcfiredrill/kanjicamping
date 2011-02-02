@@ -1,0 +1,37 @@
+!!!
+%html
+  %head
+    %meta{'http-equiv' => 'Content-Type', :content => 'text/html', :charset => 'UTF-8' }
+    %link{'rel' => 'stylesheet', :type => 'text/css', :href => '/style.css', :media => 'screen' }
+    %title=Kanji
+  %body
+    %div#container
+      %h1='kanji'
+      %form{:action => "", :method => "get"}
+        %input{:type => "text", :name => "k"}
+        %input{:type => "submit", :value => "submit"}
+
+      - if @render_result
+        %div#results
+          %div#thekanji
+            = @kanji
+          %br
+          %h4
+            %i="meanings"
+          %p
+            - @meanings.each do |m|
+              = m
+              %br
+          %h4
+            %i="on_readings"
+          %p
+            - @on_readings.each do |o|
+              = o
+              %br
+          %h4
+            %i="kun_readings"
+          %p
+            - @kun_readings.each do |k|
+              = k
+              %br
+      -#end

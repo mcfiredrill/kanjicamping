@@ -1,0 +1,43 @@
+body {
+  background: #000;
+  color: #fff;
+}
+
+body, p, ol, ul, td {
+  font-family: verdana, arial, helvetica sans-serif;
+  font-size:   14px;
+  line-height: 18px;
+}
+
+p {
+  text-indent: 5px;
+}
+
+a { color: #fff; }
+a:hover { background: #fff; color: #555; }
+
+#container {
+  width: 900px;
+  margin-left:auto;
+  margin-right:auto;
+  position: relative;
+}
+
+#results {
+  float:right;
+  width: 200px;
+  position: relative;
+}
+
+#results h4 {
+  /* position: absolute;*/
+  left:0;
+}
+
+#thekanji {
+  font-size: 140px;
+  margin-right: 10px;
+  margin-bottom: 40px;
+  /* position: absolute; */
+  top:0; right:0;
+}
