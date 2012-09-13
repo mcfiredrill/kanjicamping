@@ -1,6 +1,8 @@
+# encoding: utf-8
 require 'camping'
 require 'haml'
 require 'nokogiri'
+require 'active_support/json'
 
 Camping.goes :Kanji
 
@@ -16,12 +18,26 @@ module Kanji
           @on_readings = on_readings(@dic, @kanji)
           @kun_readings = kun_readings(@dic, @kanji)
           @render_result = true
-        elsif
+        else
           @render_result = false
         end
         render :index
       end
 
+    end
+
+    class Json < R '/([^/]+).json'
+      def get(kanji)
+        @kanji = kanji
+        @dic = open_dic
+        @meanings = meanings(@dic, @kanji)
+        @on_readings = on_readings(@dic, @kanji)
+        @kun_readings = kun_readings(@dic, @kanji)
+
+        @headers['Content-Type'] = "application/json"
+        h = {:kanji => {:kanji => @kanji, :meanings => @meanings, :on_readings => @on_readings, :kun_readings => @kun_readings}}
+        h.to_json
+      end
     end
 
     class Style < R '/style\.css'
